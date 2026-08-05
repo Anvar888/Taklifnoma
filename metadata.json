@@ -1,0 +1,6 @@
+{
+  "name": "Taklifnoma — Xolidaxon uchun",
+  "description": "Xolidaxon uchun maxsus va nafis taklifnoma sayti",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
