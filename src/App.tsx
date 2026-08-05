@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { useEffect } from "react";
+
 export default function App() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [selectedPlace, setSelectedPlace] = useState<string>('☕ Kafe');
@@ -27,11 +27,21 @@ export default function App() {
         }),
       });
       const data = await response.json();
-      if (data && data.success) {
-        setStep(3);
-      } else {
-        setStep(3);
-      }
+
+await fetch('/api/telegram', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    message: `🎉 Yangi taklifnoma javobi!
+
+📍 Joy: ${selectedPlace}
+⏰ Vaqt: ${selectedTime}`
+  }),
+});
+
+setStep(3);
     } catch (error) {
       console.error('Error sending response:', error);
       setStep(3);
@@ -177,19 +187,6 @@ export default function App() {
               </p>
             </motion.div>
           )}
-useEffect(() => {
-  if (step === 3) {
-    fetch("/api/telegram", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        message: "🎉 Yangi taklifnomaga javob yuborildi!"
-      })
-    });
-  }
-}, [step]);
           {step === 3 && (
             <motion.div
               key="step3"
