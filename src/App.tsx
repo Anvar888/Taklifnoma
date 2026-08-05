@@ -34,12 +34,12 @@ await fetch('/api/telegram', {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    message: `🎉 Yangi taklifnoma javobi!
-
-📍 Joy: ${selectedPlace}
-⏰ Vaqt: ${selectedTime}`
+    place: selectedPlace,
+    time: selectedTime
   }),
 });
+
+setStep(3);
 
 setStep(3);
     } catch (error) {
