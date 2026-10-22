@@ -98,12 +98,21 @@ setStep(3);
               </p>
 
               {/* Main Button */}
-              <button
-                onClick={() => setStep(2)}
-                className="w-full py-3.5 sm:py-4 px-6 bg-[#E91E63] hover:bg-[#d81b60] text-white font-semibold text-lg rounded-full shadow-lg shadow-[#E91E63]/25 transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98] cursor-pointer flex items-center justify-center gap-2"
-              >
-                Ha 💖
-              </button>
+              <div className="flex justify-center gap-3">
+  <button
+    onClick={() => setStep(2)}
+    className="rounded-full bg-pink-500 px-8 py-3 text-white"
+  >
+    Ha
+  </button>
+
+  <button
+    onClick={() => alert("Iltimos!")}
+    className="rounded-full bg-gray-200 px-8 py-3 text-gray-700"
+  >
+    Yo‘q
+  </button>
+</div>
 
               {/* Signature */}
               <p className="font-serif italic text-[#777] text-right text-base sm:text-lg mt-6 sm:mt-8">
