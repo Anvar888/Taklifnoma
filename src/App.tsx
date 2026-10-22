@@ -76,7 +76,7 @@ setStep(3);
 
               {/* Large script name */}
               <h1 className="font-script text-5xl sm:text-6xl text-[#E91E63] my-1 font-normal leading-tight">
-                Xolidaxon
+                Shaxnozaxon
               </h1>
 
               {/* Heart separator */}
